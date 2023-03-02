@@ -29,7 +29,6 @@ public class RockPaperScissors {
                 { 2, 6, 7 }
         };
 
-        boolean done = false;
         int total = 0;
         int totalTwo = 0;
 
