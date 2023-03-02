@@ -44,22 +44,20 @@ public class RockPaperScissors {
              * The score is added to the total score.
              * Process repeats until the end of the file is reached.
              */
-            while (!done) {
-                if (in.hasNextLine()) {
-                    String line = in.nextLine();
-                    String[] play = line.split(" ");
-                    int[] playNumber = convertPlay(play);
+            while (in.hasNextLine()) {
+                String line = in.nextLine();
+                String[] play = line.split(" ");
+                int[] playNumber = convertPlay(play);
 
-                    total += calculate(playNumber, key);
-                    totalTwo += calculate(playNumber, keyTwo);
+                total += calculate(playNumber, key);
+                totalTwo += calculate(playNumber, keyTwo);
 
-                } else {
-                    in.close();
-                    done = true;
-                    System.out.println(total);
-                    System.out.println(totalTwo);
-                }
             }
+            
+            in.close();
+            System.out.println(total);
+            System.out.println(totalTwo);
+            
 
         } catch (Exception e) {
             e.printStackTrace();

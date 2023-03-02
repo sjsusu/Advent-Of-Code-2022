@@ -11,7 +11,6 @@ public class Rucksacks {
             File file = new File(filename);
             Scanner in = new Scanner(file);
 
-            boolean done = false;
             int total = 0;
 
             /*
@@ -20,24 +19,21 @@ public class Rucksacks {
              * value.
              * This values is added to a running total until the end of the file is reached.
              */
-            while (!done) {
-                if (in.hasNextLine()) {
-                    String line = in.nextLine();
-                    String[] compartments = splitCompartments(line);
-                    char repeat = findRepeat(compartments);
-                    int priority = calculatePriority(repeat);
+            while (in.hasNextLine()) {
+                String line = in.nextLine();
+                String[] compartments = splitCompartments(line);
+                char repeat = findRepeat(compartments);
+                int priority = calculatePriority(repeat);
 
-                    total += priority;
+                total += priority;
 
-                } else {
-                    in.close();
-                    System.out.println(total);
-                    done = true;
-                }
-            }
+            } 
+
+            in.close();
+            System.out.println(total);
+                    
 
             Scanner in2 = new Scanner(file);
-            boolean done2 = false;
             int total2 = 0;
 
             /*
@@ -46,23 +42,20 @@ public class Rucksacks {
              * These values is added to a running total until the end of the file is
              * reached.
              */
-            while (!done2) {
-                if (in2.hasNextLine()) {
-                    String line1 = in2.nextLine();
-                    String line2 = in2.nextLine();
-                    String line3 = in2.nextLine();
+            while (in2.hasNextLine()) {
+                String line1 = in2.nextLine();
+                String line2 = in2.nextLine();
+                String line3 = in2.nextLine();
 
-                    char repeat = findRepeat(line1, line2, line3);
-                    int priority = calculatePriority(repeat);
+                char repeat = findRepeat(line1, line2, line3);
+                int priority = calculatePriority(repeat);
 
-                    total2 += priority;
+                total2 += priority;
 
-                } else {
-                    in2.close();
-                    System.out.println(total2);
-                    done2 = true;
-                }
-            }
+            } 
+            
+            in2.close();
+            System.out.println(total2);
 
         } catch (Exception e) {
             e.printStackTrace();
