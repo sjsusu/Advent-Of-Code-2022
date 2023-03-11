@@ -55,12 +55,6 @@ public class Cargo {
         ArrayList<Stack<Character>> cargo = new ArrayList<Stack<Character>>(9);
         ArrayList<Stack<Character>> temp = new ArrayList<Stack<Character>>(9);
 
-        // Initializes the cargo and temp arraylists
-        for (int i = 0; i < 9; i++) {
-            cargo.add(new Stack<Character>());
-            temp.add(new Stack<Character>());
-        }
-
         // Adds the cargo to the temp arraylist that is in reverse order
         for (int i = 0; i < 9; i++) {
             int count = 0;
